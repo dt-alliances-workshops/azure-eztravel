@@ -7,4 +7,4 @@ runcmd:
   - git clone https://github.com/dt-alliances-workshops/azure-eztravel.git /home/workshop/azure-eztravel
   - sudo chown workshop:workshop -R /home/workshop
   - sudo usermod -a -G sudo workshop
-  - sudo /home/workshop/dt-alliances-workshops/azure-eztravel/workshop-config/_setup-host.sh ez > /tmp/workshop-setup-host.log
+  - sudo /home/workshop/azure-eztravel/provision-scripts/_setup-host.sh ez > /tmp/workshop-setup-host.log

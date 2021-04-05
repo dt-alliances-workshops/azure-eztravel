@@ -7,7 +7,7 @@ then
     exit 1
 fi
 
-APP_SCRIPTS_FULL_PATH=/home/workshop/modernize-workshop-setup/app-scripts
+APP_SCRIPTS_FULL_PATH=/home/workshop/azure-eztravel/app-scripts
 
 setup_ez() {
 
@@ -59,7 +59,7 @@ case "$HOST_TYPE" in
         echo "===================================================="
         echo "Setting up: $HOST_TYPE" 
         echo "===================================================="
-        setup_ez-docker
+        setup_ez_docker
         ;;
     *) 
         echo "Invalid HOST_TYPE: $HOST_TYPE"
