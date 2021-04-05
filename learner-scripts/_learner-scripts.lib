@@ -43,7 +43,7 @@ showAppUrls() {
   echo "http://$PUBLIC_IP_MONOLITH"
   echo ""
   echo "MONOLITH ADMIN UI"
-  echo "http://$PUBLIC_IP_MONOLITH:8091   "
+  echo "http://$PUBLIC_IP_MONOLITH:8094"
   echo ""
   echo "DOCKER"
   echo "http://$PUBLIC_IP_DOCKER"
