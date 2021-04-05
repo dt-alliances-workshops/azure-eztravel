@@ -18,7 +18,7 @@
             "operator": "EQUALS",
             "value": {
               "context": "CONTEXTLESS",
-              "key": "workshop-group",
+              "key": "azure-workshop-group",
               "value":"{{ .name }}"
             },
             "negate": false
