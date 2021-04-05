@@ -37,3 +37,6 @@ On this Bastion VM, the workshop repo would already be cloned and the credential
 
 The learner would only then need to run any scripts in the `/home/workshop/learner-scripts/` folder.
 
+# Maintainer(s)
+
+[Rob Jahn](https://github.com/robertjahn/bio) -- Email me @ rob.jahn@dynatrace.com with questions or more details.
