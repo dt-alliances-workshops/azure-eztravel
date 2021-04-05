@@ -15,9 +15,10 @@ These scripts install the Dynatrace EZ travel sample application on both the non
     * An installation log is written to `/tmp/install-ez-travel-monolith.log` 
     * The `start-ez-travel-monolith.sh` will call the `stop-ez-travel-monolith.sh` first, then it will start the application.  The start script also will start a Docker container that servers as proxy servers to EZ travel to export standars port 80. 
     * A startup log is written to `/tmp/start-ez-travel-monolith.log`
-    * EZ travel runs on port 80, REST endpoint on 8019 and admin console runs on port 8094
+    * EZ travel runs on port 80, REST endpoint on 8091 and admin console runs on port 8094
 
 1. EZ Travel Docker-Compose
     * The `start-ez-travel-docker.sh` will call the `stop-ez-travel-docker.sh` first, then it will start the application.
     * A startup log is written to `/tmp/start-ez-travel-docker.log`
     * EZ travel runs on port 80
+    * More details can be found on this [README](https://github.com/Dynatrace/easyTravel-Docker)
