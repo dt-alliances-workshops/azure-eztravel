@@ -1,0 +1,28 @@
+# Overview
+
+This folder contains a script for a learner to provision the workshop if not setup in advance for them.
+
+## input-credentials.sh
+
+This script will prompt for entry of information such as Dynatrace URL and Azure subscription. This information then read by the scripts and other script then provisions and sets up the workshop Azure compute resources.
+
+The credentials files format is taken from `workshop-credentials.template` and written to a file with the entered values to `/tmp/workshop-credentials.json`. 
+
+This script can over and over and it will read in existing values from `/tmp/workshop-credentials.json` and allow the user to enter new ones.
+
+## provision-workshop.sh
+
+This script reads in the values from `/tmp/workshop-credentials.json` and does the following: 
+
+1. Create an Azure Service Principal used by Azure monitor integration. The Service Principal secrets are written to `tmp/workshop-azure-service-principal.json`.  This file is later referenced when the `./workshop-config/setup-workshop-config.sh` is called.
+
+1. Provision a VM with an Dynatrace ActiveGate used for the Azure monitor integration.  Before active gate provisioning, a `/tmp/workshop-active-gate-cloud-init.txt` is first created with the Dynatrace installer script and then defined within the cloud-init file.
+
+1. Provsion two VMs with OneAgent. One VM has the non-Docker-Compose version of EZ Travel and the other runs the Docker-Compose version. These two VMs use the `cloud-init-ez.txt` and `cloud-init-ez-docker` for their cloud init files. 
+    * The cloud init script will create a user called `workshop` as part of the `sudo` group
+    * These cloud init files will install GIT and then GIT CLONE this repo to the `/home/workshop` folder on the VM so that the VM has all the scripts to complete the setup including the install the EZ travel application.   
+    * Once cloned, the cloud init files will next call the `provision-scripts/_setup_host.sh` script to complete the VM setup.  
+    * On the VM, a setup log is written to `/tmp/workshop-setup-host.log`
+    * One can login to the created VMs with `ssh workshop@PUBLIC_IP`.  The password for this user is defined in the `cloud-init-XXX` files.
+
+1. Call the `./workshop-config/setup-workshop-config.sh` script that creates the Dynatrace configuration.

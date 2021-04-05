@@ -1,0 +1,11 @@
+# misc files
+.DS_Store
+.logs
+todo.txt
+
+# generated files
+workshop-credentials.json
+workshop-config/monaco/projects/workshop/azure-credentials/
+
+# downloaded files
+workshop-config/monaco-binary

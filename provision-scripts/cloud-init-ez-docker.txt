@@ -1,0 +1,9 @@
+#cloud-config
+runcmd:
+  - sudo apt-get update
+  - sudo apt-get install -y git
+  - sudo mkdir -p /home/workshop
+  - git clone https://github.com/dt-alliances-workshops/azure-eztravel.git /home/workshop/azure-eztravel
+  - sudo chown workshop:workshop -R /home/workshop
+  - sudo usermod -a -G sudo workshop
+  - sudo /home/workshop/dt-alliances-workshops/azure-eztravel/workshop-config/_setup-host.sh ez-docker > /tmp/workshop-setup-host.log

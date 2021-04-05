@@ -1,0 +1,9 @@
+{
+  "applicationIdentifier": "{{ .applicationidentifier }}",
+  "name":"{{ .name }}",
+  "filterConfig": {
+      "pattern": ":8080",
+      "applicationMatchType": "CONTAINS",
+      "applicationMatchTarget": "URL"
+  }
+}
