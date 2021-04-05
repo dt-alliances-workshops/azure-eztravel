@@ -8,7 +8,8 @@ cleanup_workshop_config()
   # this scripts will remove workshop config like tags, dashboard, MZ
   # need to be in folder to that paths used in scripts work properly
   cd ../workshop-config
-  ./cleanup-workshop-config.sh
+  # run with the no prompt option
+  ./cleanup-workshop-config.sh Y
   cd ../provision-scripts
 }
 

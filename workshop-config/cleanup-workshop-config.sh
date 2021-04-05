@@ -19,11 +19,17 @@ reset_custom_dynatrace_config() {
     setServiceAnomalyDetection ./custom/service-anomalydetectionDefault.json
 }
 
-echo "==================================================================="
-echo "About to Delete Workshop configuration on $DT_BASEURL"
-echo "==================================================================="
-read -p "Proceed with cleanup? (y/n) : " -n 1 -r
-echo ""
+# this supports the clean up to run without a prompt.  
+# Just pass in an argument ./cleanup-workshop-config.sh Y
+if [ -z $1 ]; then
+    echo "==================================================================="
+    echo "About to Delete Workshop configuration on $DT_BASEURL"
+    echo "==================================================================="
+    read -p "Proceed with cleanup? (y/n) : " -n 1 -r
+    echo ""
+else
+    REPLY=$1
+fi
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 
