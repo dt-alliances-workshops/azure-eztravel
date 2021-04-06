@@ -6,9 +6,9 @@ The repo contains the setup and learner scripts to support [this Azure and Dynat
 
 # Repo Structure
 
-1. `provision-scripts/` - If not done in advance by the workshop instructor, this folder contains a script for a learner to enter in information such as Dynatrace URL and Azure subscription. This information then read by the scripts and other script then provisions and sets up the workshop Azure compute resources.
-1. `app-scripts/` - These scripts are called by the scripts in `provision-scripts/` folder to install workshop sample applications.  A learner generally would not run these directly. 
-1. `workshop-config/` - If not done in advance by the workshop instructor, this folder contains the script to setup the Dynatrace configuration for the learners Dynatrace tenant.
+1. `provision-scripts/` - If not done in advance by the workshop instructor, this folder contains a script for a learner to enter in information such as Dynatrace URL and Azure subscription. This information is then read by the scripts that then provisions and setup the workshop Azure compute resources.
+1. `app-scripts/` - These scripts are called by the scripts in `provision-scripts/` folder to install workshop sample applications.  A learner generally would not run these directly, but they could if they needed to start or stop the applications.
+1. `workshop-config/` - If not done in advance by the workshop instructor, this folder contains the scripts to setup the Dynatrace configuration for the learners Dynatrace tenant.
 1. `learner-scripts/` - This folder contains the scripts a learner would use in workshop labs.
 
 See the README files in the subfolders for additional details.
