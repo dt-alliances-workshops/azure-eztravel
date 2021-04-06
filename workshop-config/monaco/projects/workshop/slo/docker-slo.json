@@ -15,5 +15,6 @@
   "target": 95,
   "warning": 97,
   "evaluationType": "AGGREGATE",
-  "timeframe": "-1d"
+  "timeframe": "-1d",
+  "filter": "mzName(\"{{ .mzname }}\"),type(\"SERVICE\")"
 }

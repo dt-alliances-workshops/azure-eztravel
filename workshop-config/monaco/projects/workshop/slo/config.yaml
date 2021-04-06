@@ -4,8 +4,8 @@ config:
 
 monolith-slo:
   - name: "Monolith Error Rate"
-  - skipDeployment: "false"
+  - mzname: "workshop/management-zone/mz-eztravel-monolith.name"
 
 docker-slo:
   - name: "Docker Error Rate"
-  - skipDeployment: "false"
+  - mzname: "workshop/management-zone/mz-eztravel-docker.name"
