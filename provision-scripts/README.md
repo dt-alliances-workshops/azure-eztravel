@@ -6,7 +6,7 @@ This folder contains a script for a learner to provision the workshop if not set
 
 This script will prompt for entry of information such as Dynatrace URL and Azure subscription. This information then read by the scripts and other script then provisions and sets up the workshop Azure compute resources.
 
-The credentials files format is taken from `workshop-credentials.template` and written to a file with the entered values to `/tmp/workshop-credentials.json`. 
+The credentials files format is taken from `workshop-credentials.template` and written to a file in the `gen` subfolder with the entered values called `workshop-credentials.json`.  This file will then be copied to `/tmp/workshop-credentials.json` where other scripts expect it to be found.  Note that `workshop-credentials.json` is part of the `.gitignore` to prevent it from being checked in.
 
 This script can over and over and it will read in existing values from `/tmp/workshop-credentials.json` and allow the user to enter new ones.
 
@@ -14,7 +14,7 @@ This script can over and over and it will read in existing values from `/tmp/wor
 
 This script reads in the values from `/tmp/workshop-credentials.json` and does the following: 
 
-1. Create an Azure Service Principal used by Azure monitor integration. The Service Principal secrets are written to `tmp/workshop-azure-service-principal.json`.  This file is later referenced when the `./workshop-config/setup-workshop-config.sh` is called.
+1. Create an Azure Service Principal used by Azure monitor integration. The Service Principal secrets are written to a file in the `gen` subfolder called `workshop-azure-service-principal.json`.  This file will then be copied to `/tmp/workshop-azure-service-principal.json` where it is referenced when the `./workshop-config/setup-workshop-config.sh` is called.  Note that `workshop-credentials.json` is part of the `.gitignore` to prevent it from being checked in.
 
 1. Provision a VM with an Dynatrace ActiveGate used for the Azure monitor integration.  Before active gate provisioning, a `/tmp/workshop-active-gate-cloud-init.txt` is first created with the Dynatrace installer script and then defined within the cloud-init file.
 

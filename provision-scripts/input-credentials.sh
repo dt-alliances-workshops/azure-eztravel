@@ -3,7 +3,7 @@
 YLW='\033[1;33m'
 NC='\033[0m'
 
-CREDS_FILE=/tmp/workshop-credentials.json
+CREDS_FILE=./gen/workshop-credentials.json
 CREDS_TEMPLATE_FILE=./workshop-credentials.template
 
 if [ -f "$CREDS_FILE" ]
@@ -83,6 +83,7 @@ echo "==================================================================="
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+
   # make a backup
   cp $CREDS_FILE $CREDS_FILE.bak 2> /dev/null
   rm $CREDS_FILE 2> /dev/null
@@ -97,8 +98,11 @@ then
     sed 's~DT_API_TOKEN_PLACEHOLDER~'"$DT_API_TOKEN"'~' | \
     sed 's~DT_PAAS_TOKEN_PLACEHOLDER~'"$DT_PAAS_TOKEN"'~' > $CREDS_FILE
 
+  # copy to location that other script expect it
+  CREDS_FILE_COPY="/tmp/workshop-credentials.json"
+  cp -f $CREDS_FILE $CREDS_FILE_COPY
   echo ""
-  echo "Saved credential values to: $CREDS_FILE"
+  echo "Saved credential values to: $CREDS_FILE_COPY"
   echo ""
   echo "==================================================================="
   cat $CREDS_FILE

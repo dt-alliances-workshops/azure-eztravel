@@ -21,7 +21,7 @@ fi
 create_azure_service_principal()
 {
   AZURE_SP_NAME="$AZURE_RESOURCE_GROUP-sp" 
-  AZURE_SP_JSON_FILE="/tmp/workshop-azure-service-principal.json"
+  AZURE_SP_JSON_FILE="./gen/workshop-azure-service-principal.json"
 
   # delete sp if it exists
   echo "Seeing if $AZURE_SP_NAME exists in Azure"
@@ -39,6 +39,11 @@ create_azure_service_principal()
       --role reader \
       --scopes "/subscriptions/$AZURE_SUBSCRIPTION" \
       > "$AZURE_SP_JSON_FILE"
+
+  # copy file where other scripts expect it
+  AZURE_SP_JSON_FILE_COPY="/tmp/workshop-azure-service-principal.json"
+  echo "Coping file to $AZURE_SP_JSON_FILE_COPY"
+  cp -f $AZURE_SP_JSON_FILE $AZURE_SP_JSON_FILE_COPY
 
   echo "Sleeping 10 seconds to allow for Azure subscription creation"
   sleep 10
