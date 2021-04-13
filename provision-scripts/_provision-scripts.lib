@@ -134,7 +134,7 @@ delete_resource_group()
 #*********************************
 provision_linux_active_gate()
 {
-  HOSTNAME="workshop-active-gate"
+  HOSTNAME="ez-travel-active-gate"
 
   # make cloud-init with users API and TOKEN info
   ACTIVATE_GATE_FILE="/tmp/workshop-active-gate-cloud-init.txt"
@@ -185,7 +185,7 @@ provision_linux_active_gate()
 # Standard_B1ms   = 1 vcpus, 2 GiB memory
 provision_eztravel_vm()
 {
-  HOSTNAME="workshop-ez-monolith"
+  HOSTNAME="ez-travel-monolith"
 
   echo "Checking if $HOSTNAME already exists"
   echo "If you see 'ERROR: (ResourceNotFound)', that is OK.  Its just the output from azure CLI"
@@ -234,7 +234,7 @@ provision_eztravel_vm()
 # cloud-init logs: /var/log/cloud-init.log
 provision_eztravel_docker_vm()
 {
-  HOSTNAME="workshop-ez-docker"
+  HOSTNAME="ez-travel-docker"
   echo "Checking if $HOSTNAME already exists"
   echo "If you see 'ERROR: (ResourceNotFound)', that is OK.  Its just the output from azure CLI"
   echo ""

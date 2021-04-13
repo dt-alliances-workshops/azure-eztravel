@@ -17,7 +17,7 @@
           "comparisonInfo": {
             "type": "STRING",
             "operator": "CONTAINS",
-            "value": "{{ .matchname }}",
+            "value": "ez-travel-monolith",
             "negate": false,
             "caseSensitive": true
           }
@@ -40,7 +40,7 @@
           "comparisonInfo": {
             "type": "STRING",
             "operator": "CONTAINS",
-            "value": "workshop-ez-docker",
+            "value": "ez-travel-docker",
             "negate": false,
             "caseSensitive": true
           }

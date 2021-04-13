@@ -3,4 +3,3 @@ config:
 
 auto-tag-workshop-group:
   - name: "azure-workshop-group"
-  - matchname: "ez-monolith"

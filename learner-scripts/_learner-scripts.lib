@@ -12,7 +12,7 @@ else
 fi
 
 getMonolithPublicIP() {
-  HOSTNAME_MONOLITH="workshop-ez-monolith"
+  HOSTNAME_MONOLITH="ez-travel-monolith"
   echo "Retrieving $HOSTNAME_MONOLITH Public IP"
   PUBLIC_IP_MONOLITH=$(az vm list \
     --resource-group "$AZURE_RESOURCE_GROUP" \
@@ -21,7 +21,7 @@ getMonolithPublicIP() {
 }
 
 getDockerPublicIP() {
-  HOSTNAME_DOCKER="workshop-ez-docker"
+  HOSTNAME_DOCKER="ez-traveldocker"
   echo "Retrieving $HOSTNAME_DOCKER Public IP"
   PUBLIC_IP_DOCKER=$(az vm list \
     --resource-group "$AZURE_RESOURCE_GROUP" \
