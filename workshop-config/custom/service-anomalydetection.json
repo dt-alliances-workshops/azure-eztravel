@@ -15,11 +15,11 @@
   "loadSpike": {
     "enabled": false
   },
-  "failureRateIncrease": {
-    "detectionMode": "DETECT_AUTOMATICALLY",
-    "automaticDetection": {
-      "failingServiceCallPercentageIncreaseAbsolute": 0,
-      "failingServiceCallPercentageIncreaseRelative": 50
-    }
+	"failureRateIncrease": {
+		"detectionMode": "DETECT_USING_FIXED_THRESHOLDS",
+		"thresholds": {
+		  "threshold": 10,
+		  "sensitivity": "LOW"
+		}
   }
 }
